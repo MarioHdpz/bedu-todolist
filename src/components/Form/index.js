@@ -10,7 +10,7 @@ class Form extends Component {
       const value = event.target.value;
       this.setState({input: value});
     }
-    
+
     render = () => {
             
       return (
@@ -20,7 +20,10 @@ class Form extends Component {
             value={this.state.input}
             onChange={event => this.handleInputChange(event)}
           />
-          <button class="button">Add</button>
+          <button 
+            onClick={() => this.props.onButtonClick(this.state.input)}
+            class="button">{this.props.name}
+          </button>
         </div>
       )
     }
